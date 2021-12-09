@@ -81,6 +81,7 @@ export const Form = () => {
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  aria-label="password"
                   className={
                     errors.password && touched.password ? "input-error" : null
                   }
