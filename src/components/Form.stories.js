@@ -55,6 +55,9 @@ FilledForm.play = async ({ canvasElement }) => {
   });
 
   await userEvent.type(passwordInput, "Example");
+
+  const submitButton = canvas.getByRole("button");
+  await userEvent.click(submitButton);
 };
 
 export const WithHoverState = Template.bind({});
