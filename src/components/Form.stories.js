@@ -75,8 +75,31 @@ WithHoverState.play = async ({ canvasElement }) => {
 
   // Triggers the hover state
   await waitFor(async () => {
-    //await userEvent.hover(canvas.getByLabelText("email-error"));
     await userEvent.hover(canvas.getByLabelText("Email error"));
-    //await userEvent.hover(canvas.getby("email-error"));
   });
+};
+
+export const WithFocusState = Template.bind({});
+WithFocusState.play = async ({ canvasElement }) => {
+  // Starts querying the component from its root
+  const canvas = within(canvasElement);
+
+  // Looks up the inputs and fills them.
+  const emailInput = canvas.getByLabelText("email", {
+    selector: "input",
+  });
+  await userEvent.type(emailInput, "Example");
+
+  const passwordInput = canvas.getByLabelText("password", {
+    selector: "input",
+  });
+
+  await userEvent.type(passwordInput, "Example");
+
+  /*   // Looks up the button and interacts with it.
+  const submitButton = canvas.getByRole("button");
+  await userEvent.click(submitButton); */
+
+  // Sets focus on the email input
+  emailInput.focus();
 };
