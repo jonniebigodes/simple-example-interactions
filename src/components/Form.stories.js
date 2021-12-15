@@ -9,9 +9,7 @@ export default {
 
 const Template = (args) => <Form {...args} />;
 
-export const Default = Template.bind({});
-
-export const WithEmailFilled = Template.bind({});
+/* export const WithEmailFilled = Template.bind({});
 
 WithEmailFilled.play = async ({ canvasElement }) => {
   // Starts querying the component from its root
@@ -36,7 +34,7 @@ WithPasswordFilled.play = async ({ canvasElement }) => {
   });
 
   await userEvent.type(passwordInput, "Example");
-};
+}; */
 
 export const FilledForm = Template.bind({});
 FilledForm.play = async ({ canvasElement }) => {
@@ -57,7 +55,7 @@ FilledForm.play = async ({ canvasElement }) => {
   await userEvent.type(passwordInput, "Example");
 };
 
-export const WithHoverState = Template.bind({});
+/* export const WithHoverState = Template.bind({});
 WithHoverState.play = async ({ canvasElement }) => {
   // Starts querying the component from its root
   const canvas = within(canvasElement);
@@ -79,4 +77,4 @@ WithHoverState.play = async ({ canvasElement }) => {
     await userEvent.hover(canvas.getByLabelText("Email error"));
     //await userEvent.hover(canvas.getby("email-error"));
   });
-};
+}; */
